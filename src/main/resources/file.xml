@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by TeaM DJiNN (TeaM DJiNN) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mos.ru/gu/service/22501/" targetNamespace="http://mos.ru/gu/service/22501/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="Block28_pasp1" type="xs:string" minOccurs="1">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Серия</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_pasp2" type="xs:string" minOccurs="1">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Номер</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_pasp3" type="xs:dateTime" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Дата выдачи</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_pasp4" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Кем выдан</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_pasp5" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Код подразделения</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_LastName" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Фамилия</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_FirstName" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Имя</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_MiddleName" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Отчество</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_WhoSign" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Должность лица, подписывающего документ</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_DocSubType" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Наименование документа, на основании которого лицо действует</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_DocDate" type="xs:dateTime" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Дата документа</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Block28_DocNumber" type="xs:string" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Номер документа</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    <xs:element name="Sh1_Podpis_RadioButton" minOccurs="0">
+        <xs:annotation>
+            <xs:documentation xml:lang="ru">Лицо, подписывающее договор со стороны заявителя</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:int">
+                <xs:enumeration value="1"/>
+                <xs:enumeration value="2"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+        </xs:schema>
