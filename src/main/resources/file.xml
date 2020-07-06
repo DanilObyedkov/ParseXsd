@@ -1,75 +1,524 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by TeaM DJiNN (TeaM DJiNN) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mos.ru/gu/service/22501/" targetNamespace="http://mos.ru/gu/service/22501/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-    <xs:element name="Block28_pasp1" type="xs:string" minOccurs="1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mos.ru/gu/service/087301/" xmlns:ns1="http://mos.ru/gu/service/087301/" targetNamespace="http://mos.ru/gu/service/087301/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:element name="ServiceProperties">
         <xs:annotation>
-            <xs:documentation xml:lang="ru">Серия</xs:documentation>
+            <xs:documentation xml:lang="ru">ПГУ: Мегаформа ДГИ</xs:documentation>
         </xs:annotation>
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="block1_agree1" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Обязуюсь сообщать обо всех изменениях, связанных с представленными в настоящем заявлении документами и сведениями</xs:documentation>
+                        <xs:documentation xml:lang="ru">False - Нет, True - Да</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="block1_agree2" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Я ознакомлен с правилами предоставления государственной услуги и как заявитель несу ответственность за полноту и достоверность представленных сведений</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="block1_status">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">О статусах рассмотрения государственной услуги дополнительно прошу извещать</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="1">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">по электронной почте</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="2">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">SMS-уведомлением со стороны ОИВ</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="block5_addroo" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Адрес получения результата по государственной услуге на бумажном носителе:</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="1">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ЦАО, 125993, г. Москва, 1-ый Красногвардейский проезд, д.21, стр.1</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="2">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ЗАО, 121108, г. Москва, ул. Ивана Франко, д. 8, корп. 2</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="3">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ЮВАО, 111024, г. Москва, ш. Энтузиастов, д. 11А, к. 4</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="4">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">САО, 125167, г. Москва, ул. Викторенко, д. 4/1</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="5">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ЮАО, 109280, г. Москва, ул. Автозаводская, д. 10</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="6">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ЮЗАО, 119333, г. Москва, Университетский проспект, д. 6, корп. 1</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="7">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">СВАО, 127322, г. Москва, ул. Руставели, д. 10, корп. 3</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="8">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ВАО, 101014, г. Москва, ул. Стромынка, д. 3</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="9">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">СЗАО, 123585, г. Москва, ул. Народного Ополчения, д. 33, корп. 2</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="10">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ЗЕЛАО, 124482, г. Москва, г. Зеленоград, Центральный пр-т, д. 1</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="11">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ТАО, 117042, г. Москва, поселение Сосенское, п. Коммунарка, ул. Сосенский Стан, д.4 (Административно-деловой центр «Коммунарка»), 2 этаж, каб. 233</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="zayv_yavl" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Вы являетесь</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="1">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">Юридическим лицом</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="2">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">Индивидуальным предпринимателем</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="need_paper">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Хочу получить результат предоставления услуги</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="sh1_type2" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Выбор государственной услуги</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="sh1_type3" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Условие предоставления услуги</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Type_object">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="1"/>
+                            <xs:enumeration value="2"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="block1_sogl" type="xs:boolean">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Я выражаю свое согласие на изменение органом исполнительной власти схемы расположения земельного участка на кадастровом плане территории, прилагаемого к данному заявлению</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="person2_mail" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Адрес электронной почты:</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Sh1_Podpis_RadioButton" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Лицо, подписывающее документ со стороны заявителя</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:int">
+                            <xs:enumeration value="1">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">Заявителем</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                            <xs:enumeration value="2">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">Представитель заявителя</xs:documentation>
+                                </xs:annotation>
+                            </xs:enumeration>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="zem_uchlist" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="zem_uch" minOccurs="0" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ПГУ: Мегаформа ДГИ земельный участок</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="object3_adr" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Адресные ориентиры</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object3_cadnum" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Кадастровый номер</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object3_okato" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">ОКАТО</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="new_sh1_object3_right_reg" type="xs:boolean" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Право на запрашиваемый земельный участок</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Block16_cad_uch1" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1"/>
+                                                    <xs:enumeration value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Block16_cad_uch2" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1"/>
+                                                    <xs:enumeration value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="sh1_object3_aim_use" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Цель использования земельного участка</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="sh1_object3_right_use" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Запрашиваемый вид разрешенного использования</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="sh1_object3_zalog" type="xs:boolean" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Наличие залога</xs:documentation>
+                                                <xs:documentation xml:lang="ru">False - Нет, True - Да</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Block28_LastName" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Фамилия</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Block28_FirstName" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Имя</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Block28_MiddleName" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Отчество</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Block28_WhoSign" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Должность лица, подписывающего документ</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Block28_DocSubType" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Наименование документа, на основании которого лицо действует</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Block28_DocDate" type="xs:dateTime" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Дата документа</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="Block28_DocNumber" type="xs:string" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="ru">Номер документа</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="real_estate_objectslist" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="real_estate_objects" maxOccurs="unbounded">
+                                <xs:annotation>
+                                    <xs:documentation xml:lang="ru">ПГУ: Мегаформа ДГИ объекты недвижимости</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:all>
+                                        <xs:element name="Object1_fias_Street" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Улица</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_House" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Дом</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Ownership" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Владение</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Building" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Корпус</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Structure" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Строение</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_PostalCode" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Индекс</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Okato" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>ОКАТО</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_KladrCode" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>КЛАДР КОД</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_FiasCode" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>ФИАС КОД</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Litera" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Литера</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Flat2" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Этаж</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Flat1" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Помещение</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Flat3" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Комнаты</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_POBox" type="xs:string" minOccurs="0"/>
+                                        <xs:element name="Object1_fias_Flat" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Квартира/офис</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Locality" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Регион</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_cadnumslist" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Кадастровый номер</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="object1_cadnums" minOccurs="0" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:all>
+                                                                <xs:element name="object1_cadnum1" type="xs:string" minOccurs="0">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation xml:lang="ru">Кадастровый номер</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:element>
+                                                            </xs:all>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Region" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Район</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_City" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Город</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Object1_fias_Town" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Населенный пункт</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_distr" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Район</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_house" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Дом</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Okato" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>ОКАТО</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_NumType" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Тип номера</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1"/>
+                                                    <xs:enumeration value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Type1" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Здание, строение, сооружение</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="2">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Помещение в здании</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="sh1_object3_right_reg" type="xs:boolean" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Право на объект зарегистрировано в Едином государственном реестре недвижимости</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Type2" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation>Назначение</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1"/>
+                                                    <xs:enumeration value="2"/>
+                                                    <xs:enumeration value="3"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="Sh1_Object1_Type" minOccurs="0">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1"/>
+                                                    <xs:enumeration value="2"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="object1_orient" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Адресный ориентир</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_square1" type="xs:double" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Площадь (м2)</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_street" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Улица</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_type" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Тип</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                    <xs:enumeration value="1">
+                                                        <xs:annotation>
+                                                            <xs:documentation xml:lang="ru">Здание, строение, сооружение</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                    <xs:enumeration value="2">
+                                                        <xs:annotation>
+                                                            <xs:documentation xml:lang="ru">Помещение</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:enumeration>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element name="object1_uslnum1" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Условный номер (согласно сведениям ЕГРП)</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element name="object1_ao" type="xs:string" minOccurs="0">
+                                            <xs:annotation>
+                                                <xs:documentation xml:lang="ru">Административный округ</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                    </xs:all>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
     </xs:element>
-    <xs:element name="Block28_pasp2" type="xs:string" minOccurs="1">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Номер</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_pasp3" type="xs:dateTime" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Дата выдачи</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_pasp4" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Кем выдан</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_pasp5" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Код подразделения</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_LastName" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Фамилия</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_FirstName" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Имя</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_MiddleName" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Отчество</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_WhoSign" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Должность лица, подписывающего документ</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_DocSubType" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Наименование документа, на основании которого лицо действует</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_DocDate" type="xs:dateTime" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Дата документа</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Block28_DocNumber" type="xs:string" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Номер документа</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-    <xs:element name="Sh1_Podpis_RadioButton" minOccurs="0">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">Лицо, подписывающее договор со стороны заявителя</xs:documentation>
-        </xs:annotation>
-        <xs:simpleType>
-            <xs:restriction base="xs:int">
-                <xs:enumeration value="1"/>
-                <xs:enumeration value="2"/>
-            </xs:restriction>
-        </xs:simpleType>
-    </xs:element>
-        </xs:schema>
+</xs:schema>

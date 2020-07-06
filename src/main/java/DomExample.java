@@ -16,7 +16,7 @@ public class DomExample {
 
         try {
 
-            File fXmlFile = new File("H:\\Try\\src\\main\\resources\\file.xml");
+            File fXmlFile = new File("C:\\workspace\\projectRepo\\ParseXSD\\ParseXsd\\src\\main\\resources\\file.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
