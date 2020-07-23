@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2011 rel. 2 (http://www.altova.com) by TeaM DJiNN (TeaM DJiNN) -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mos.ru/gu/service/087301/" xmlns:ns1="http://mos.ru/gu/service/087301/" targetNamespace="http://mos.ru/gu/service/087301/" elementFormDefault="qualified" attributeFormDefault="unqualified">
-    <xs:element name="ServiceProperties">
-        <xs:annotation>
-            <xs:documentation xml:lang="ru">ПГУ: Мегаформа ДГИ</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:all>
+
+
                 <xs:element name="block1_agree1" type="xs:boolean">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="ru">Обязуюсь сообщать обо всех изменениях, связанных с представленными в настоящем заявлении документами и сведениями</xs:documentation>
-                        <xs:documentation xml:lang="ru">False - Нет, True - Да</xs:documentation>
-                    </xs:annotation>
+                    <xs:annotation>4234234</xs:annotation>
                 </xs:element>
                 <xs:element name="block1_agree2" type="xs:boolean">
                     <xs:annotation>
@@ -518,7 +511,7 @@
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
-            </xs:all>
-        </xs:complexType>
-    </xs:element>
+
+
+
 </xs:schema>
