@@ -79,11 +79,11 @@ public class DomExample {
 
                         //  System.out.println(nodename+"  "+conditionValue+"  "+typeValue+"  "+(documentationValue==null?"":documentationValue)+"  ");
 
-                        System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"" + ", example=\"true\" " + ", position = " + (temp+1)+(conditionValue.isEmpty()?",  required= true ":"")+")\n"+
+                        System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"," +(("string".equals(typeValue)?"example ="+"\"String"+"\"":"example ="+"\"true"+"\"")+ (", position ="+(temp+1))+(conditionValue.isEmpty()?",  required= true ":"")+")\n"+
                                 "@XmlElement(name = \""+nameNode+"\""+")\n"
                                 +(conditionValue.isEmpty()?"@NotNull\n":"")+
                                 "private  "+("string".equals(typeValue)?"String  ":"boolean".equals(typeValue)?"Boolean  ":"String  " )+  nodenamee.replaceAll("_","")+";"+"\n"+
-                                " ");
+                                " "));
 
 
                     }
