@@ -36,7 +36,6 @@ public class DomExample {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
 
-
                     Element eElement = (Element) nNode;
 
                              /*
@@ -44,7 +43,10 @@ public class DomExample {
                             */
 
                     String nameNode = eElement.getAttribute("name");
-                    String nodename = nameNode;
+                    String nodenamee = nameNode;
+                    nodenamee.indexOf('_');
+                    String help = nodenamee;
+
 
                            /*
                       get node condition form XSD (example= "zayv_yavl")
@@ -58,17 +60,34 @@ public class DomExample {
                              */
 
                     String type = eElement.getAttribute("type");
-                    String typeValue = type;
+                    String typeValue = type.replaceAll("xs:","");
 
                     Node documentation = eElement.getElementsByTagName("xs:documentation").item(0);
-                    String documentationValue = documentation==null?"":documentation.getTextContent();
+                    String documentationValue = documentation == null ? "" : documentation.getTextContent();
 
 
-                    System.out.println(nodename+"  "+conditionValue+"  "+typeValue+"  "+(documentationValue==null?"":documentationValue));
+                             /*
+                      get node enumeration form XSD (example= "1,2,3")
+                            TODO
+                             */
+                    Node enumeration = eElement.getElementsByTagName("xs:restriction").item(2);
+                    String enumerationValue = enumeration == null ? "" : enumeration.getNodeName();
 
 
 
-                }
+
+
+                        //  System.out.println(nodename+"  "+conditionValue+"  "+typeValue+"  "+(documentationValue==null?"":documentationValue)+"  ");
+
+                        System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"" + ", example=\"true\" " + ", position = " + (temp+1)+(conditionValue.isEmpty()?",  required= true ":"")+")\n"+
+                                "@XmlElement(name = \""+nameNode+"\""+")\n"
+                                +(conditionValue.isEmpty()?"@NotNull\n":"")+
+                                "private  "+("string".equals(typeValue)?"String  ":"boolean".equals(typeValue)?"Boolean  ":"String  " )+  nodenamee.replaceAll("_","")+";"+"\n"+
+                                " ");
+
+
+                    }
+
 
             }
 
