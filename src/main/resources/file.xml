@@ -3,14 +3,7 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://mos.ru/gu/service/087301/" xmlns:ns1="http://mos.ru/gu/service/087301/" targetNamespace="http://mos.ru/gu/service/087301/" elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 
-                <xs:element name="block1_agree1" type="xs:boolean">
-                    <xs:annotation>4234234</xs:annotation>
-                </xs:element>
-                <xs:element name="block1_agree2" type="xs:boolean">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="ru">Я ознакомлен с правилами предоставления государственной услуги и как заявитель несу ответственность за полноту и достоверность представленных сведений</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
+
                 <xs:element name="block1_status">
                     <xs:annotation>
                         <xs:documentation xml:lang="ru">О статусах рассмотрения государственной услуги дополнительно прошу извещать</xs:documentation>
@@ -29,7 +22,7 @@
                             </xs:enumeration>
                         </xs:restriction>
                     </xs:simpleType>
-                </xs:element>
+                </xs:element>sh1_type2
                 <xs:element name="block5_addroo" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="ru">Адрес получения результата по государственной услуге на бумажном носителе:</xs:documentation>
@@ -147,7 +140,7 @@
                         <xs:documentation xml:lang="ru">Я выражаю свое согласие на изменение органом исполнительной власти схемы расположения земельного участка на кадастровом плане территории, прилагаемого к данному заявлению</xs:documentation>
                     </xs:annotation>
                 </xs:element>
-                <xs:element name="person2_mail" type="xs:string" minOccurs="0">
+                <xs:element name="person2_mail" type="xs:string" minOccurs="1">
                     <xs:annotation>
                         <xs:documentation xml:lang="ru">Адрес электронной почты:</xs:documentation>
                     </xs:annotation>

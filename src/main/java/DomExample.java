@@ -14,44 +14,67 @@ public class DomExample {
 
         try {
 
-            File file = new File("D:\\WorkSpaceSmSoft\\ParseXsd\\src\\main\\resources\\file.xml");
+            File file = new File("D:\\MyProjects\\ParseXsd\\src\\main\\resources\\file.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(file);
 
-            //optional, but recommended
-            //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
 
+
             NodeList nList = doc.getElementsByTagName("xs:element");
 
-            System.out.println("----------------------------");
 
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
+
                 Node nNode = nList.item(temp);
 
-              //  System.out.println("\nCurrent Element :" + nNode.getNodeName());
 
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
+
+
                     Element eElement = (Element) nNode;
 
-                    System.out.println(eElement.getAttribute("name"));
-                    System.out.println(eElement.getElementsByTagName("xs:annotation").item(0).getTextContent());
-                    System.out.println(eElement.getElementsByTagName("lastname").item(0).getTextContent());
-                   // System.out.println("Nick Name : " + eElement.getElementsByTagName("nickname").item(0).getTextContent());
-                   // System.out.println("Salary : " + eElement.getElementsByTagName("salary").item(0).getTextContent());
+                             /*
+                  get node name form XSD (example= "zayv_yavl")
+                            */
+
+                    String nameNode = eElement.getAttribute("name");
+                    String nodename = nameNode;
+
+                           /*
+                      get node condition form XSD (example= "zayv_yavl")
+                             */
+
+                    String condition = eElement.getAttribute("minOccurs");
+                    String conditionValue = condition;
+
+                            /*
+                      get node type form XSD (example= "boolean")
+                             */
+
+                    String type = eElement.getAttribute("type");
+                    String typeValue = type;
+
+                    Node documentation = eElement.getElementsByTagName("xs:documentation").item(0);
+                    String documentationValue = documentation==null?"":documentation.getTextContent();
+
+
+                    System.out.println(nodename+"  "+conditionValue+"  "+typeValue+"  "+(documentationValue==null?"":documentationValue));
+
+
 
                 }
+
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
-
 }
-
-

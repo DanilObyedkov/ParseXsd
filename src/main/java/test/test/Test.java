@@ -46,6 +46,7 @@ public class Test {
                         switch (childElement.getNodeName()) {
                             case "name": {
                                 employe.setName(childElement.getTextContent());
+
                             } break;
 
                                 case "age": {
@@ -58,6 +59,7 @@ public class Test {
                             }
                                 }
                             }
+
                 employeList.add (employe);
                         }
                     }
