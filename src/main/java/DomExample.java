@@ -14,7 +14,7 @@ public class DomExample {
 
         try {
 
-            File file = new File("D:\\MyProjects\\ParseXsd\\src\\main\\resources\\file.xml");
+            File file = new File("C:\\workspace\\projectRepo\\ParseXSD\\ParseXsd\\src\\main\\resources\\file.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(file);
@@ -70,20 +70,23 @@ public class DomExample {
                       get node enumeration form XSD (example= "1,2,3")
                             TODO
                              */
-                    Node enumeration = eElement.getElementsByTagName("xs:restriction").item(2);
-                    String enumerationValue = enumeration == null ? "" : enumeration.getNodeName();
-
+                    Node test = eElement.getElementsByTagName("xs:enumeration").item(0);
+                    String testtt = test == null ? "" : test.getTextContent();
 
 
 
 
                         //  System.out.println(nodename+"  "+conditionValue+"  "+typeValue+"  "+(documentationValue==null?"":documentationValue)+"  ");
 
-                        System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"," +(("string".equals(typeValue)?"example ="+"\"String"+"\"":"example ="+"\"true"+"\"")+ (", position ="+(temp+1))+(conditionValue.isEmpty()?",  required= true ":"")+")\n"+
-                                "@XmlElement(name = \""+nameNode+"\""+")\n"
-                                +(conditionValue.isEmpty()?"@NotNull\n":"")+
+
+                        System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"," +(("string".equals(typeValue)?"example ="+"\"String"+"\"":"boolean".equals(typeValue)?"example ="+"\"true"+"\"":"example ="+"\"String"+"\"")+
+                                (", position ="+(temp+1))+("1".equals(condition)?",  required= true ":"")+""+(test==null?")":"")+
+                                (test!=null?", allowableValues=\"\")":"")+
+                                "\n"+"@XmlElement(name = \""+nameNode+"\""+")\n"
+                                +("1".equals(condition)?"@NotNull\n":"")+
                                 "private  "+("string".equals(typeValue)?"String  ":"boolean".equals(typeValue)?"Boolean  ":"String  " )+  nodenamee.replaceAll("_","")+";"+"\n"+
                                 " "));
+
 
 
                     }
