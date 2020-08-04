@@ -70,13 +70,14 @@ public class DomExample {
                       get node enumeration form XSD (example= "1,2,3")
                             TODO
                              */
-                    Node test = eElement.getElementsByTagName("xs:enumeration").item(0);
-                    String testtt = test == null ? "" : test.getTextContent();
+                    Node test = eElement.getElementsByTagName ("xs:restriction").item(0);
+                    String testt = test == null ? "" : test.getTextContent();
 
 
 
 
                         //  System.out.println(nodename+"  "+conditionValue+"  "+typeValue+"  "+(documentationValue==null?"":documentationValue)+"  ");
+
 
 
                         System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"," +(("string".equals(typeValue)?"example ="+"\"String"+"\"":"boolean".equals(typeValue)?"example ="+"\"true"+"\"":"example ="+"\"String"+"\"")+
@@ -87,6 +88,7 @@ public class DomExample {
                                 "private  "+("string".equals(typeValue)?"String  ":"boolean".equals(typeValue)?"Boolean  ":"String  " )+  nodenamee.replaceAll("_","")+";"+"\n"+
                                 " "));
 
+                   // System.out.println(testt);
 
 
                     }
