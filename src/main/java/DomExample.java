@@ -80,10 +80,10 @@ public class DomExample {
 
 
                         System.out.println("@ApiModelProperty(value = \"" + documentationValue + "\"," +(("string".equals(typeValue)?"example ="+"\"String"+"\"":"boolean".equals(typeValue)?"example ="+"\"true"+"\"":"example ="+"\"String"+"\"")+
-                                (", position ="+(temp+1))+("1".equals(condition)?",  required= true ":"")+""+(test==null?")":"")+
+                                (", position ="+(temp+1))+("0".equals(condition)?"":",  required= true ")+""+(test==null?")":"")+
                                 (test!=null?", allowableValues=\"\")":"")+
                                 "\n"+"@XmlElement(name = \""+nameNode+"\""+")\n"
-                                +("1".equals(condition)?"@NotNull\n":"")+
+                                +("0".equals(condition)?"":"@NotNull\n")+
                                 "private  "+("string".equals(typeValue)?"String  ":"boolean".equals(typeValue)?"Boolean  ":"String  " )+  nodenamee.replaceAll("_","")+";"+"\n"+
                                 " "));
 
